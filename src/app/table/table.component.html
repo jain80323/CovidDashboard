@@ -1,0 +1,116 @@
+<div >
+    <h4 class="covidHead">Covid Data</h4>
+    <div>
+        <span class="filters">Filters</span>
+    </div>
+</div>
+
+  <mat-form-field appearance="fill" class = "filterss">
+    <mat-label>Select an State</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="selectedDistrict($event.value)">
+      <mat-option *ngFor="let data of myData" [(value)]="data.state_name" style="height: 48px;
+      background-color: whitesmoke;
+      margin-top: 17px;">
+        {{data.state_name}}
+      </mat-option> 
+    </mat-select>
+  </mat-form-field>  
+
+<div class="row m-0" style="margin-top: 30px;" *ngIf="!displayElement">
+    <div class="col-12 p-0 shadow-sm">
+      <div class="MD-table" style="height: 370px;">
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows
+      class="mat-elevation-z8" matSort class="w-100">
+       
+        <ng-container matColumnDef="State" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 254px;">State</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.state_name }}
+          </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="Population">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Population</th> 
+          <td mat-cell *matCellDef="let element">
+            {{element.state_code_object?.meta.population}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Confirmed Cases">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Confirmed Cases</th> 
+          <td mat-cell *matCellDef="let element">
+            {{element.state_code_object?.total.confirmed}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Active Cases">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Active Cases</th> 
+            <td mat-cell *matCellDef="let element" >
+              {{element.state_code_object?.total.confirmed - element.state_code_object?.total.deceased - element.state_code_object?.total.recovered}}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Deceased">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Deceased</th> 
+            <td mat-cell *matCellDef="let element" >
+              {{element.state_code_object?.total.deceased}}
+            </td>
+          </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height: 44px;"></tr>
+      </table>
+      </div>
+      <div class="no-data"*ngIf="myData && myData.length === 0" style="text-align: center;">No data found</div>
+    </div>
+  </div>
+
+  <div class="row m-0" style="margin-top: 30px;" *ngIf="displayElement">
+    <div class="col-12 p-0 shadow-sm">
+      <div class="MD-table" style="height: 370px;">
+      <table mat-table [dataSource]="districtData" multiTemplateDataRows
+      class="mat-elevation-z8" matSort class="w-100">
+       
+        <ng-container matColumnDef="District" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 254px;">District</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.distrctname }}
+          </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="Population">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Population</th> 
+          <td mat-cell *matCellDef="let element">
+            {{element.districtobj?.meta?.population}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Confirmed Cases">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Confirmed Cases</th> 
+          <td mat-cell *matCellDef="let element">
+            {{element.districtobj?.total?.confirmed}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Active Cases">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Active Cases</th> 
+            <td mat-cell *matCellDef="let element" >
+              {{element.districtobj?.total?.confirmed - element.districtobj?.total?.deceased - element.districtobj?.total?.recovered}}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Deceased">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Deceased</th> 
+            <td mat-cell *matCellDef="let element" >
+              {{element.districtobj?.total?.deceased}}
+            </td>
+          </ng-container>
+
+         <tr mat-header-row *matHeaderRowDef="displayedColumnsd"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumnsd;" style="height: 44px;"></tr>
+      </table>
+      </div>
+      <div class="no-data"*ngIf="districtObject && districtObject.length === 0" style="text-align: center;">No data found</div>
+    </div>
+  </div>
+  <mat-paginator [pageSizeOptions]="[7,10, 20]" showFirstLastButtons style="margin-left: 7px;"></mat-paginator>

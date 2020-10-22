@@ -1,0 +1,39 @@
+<div class="row twocols">
+    <div class="column" style="background-color:#ffffff;">
+      <h2>Pie Chart</h2>
+      <div class="d-inline-flex float-left pb-0 pl-0" style="margin-left: 13em;">
+        <div>
+            <span class="legendIconn legendBlackBar"></span>
+            <span class="legendText">Total Population</span>
+            <span class="legendIconn legendBlueBar"></span>
+            <span class="legendText">Confirmed Cases</span>
+        </div>
+    </div>
+    <div *ngIf="pieechartData && pieechartData.length !=0">
+      <app-pie-chart chartId="pieChart" [chartData]="pieechartData"></app-pie-chart>
+      </div>
+  </div>
+
+    <div class="column" style="background-color:#ffffff;">
+      <h2>Donut Chart</h2>
+      <div class="d-inline-flex float-left pb-0 pl-0" style="margin-left: 7em;">
+        <div>
+            <span class="legendIconn legendBlackBar"></span>
+            <span class="legendText">Deceased</span>
+            <span class="legendIconn legendBlueBar"></span>
+            <span class="legendText">Active Cases</span>
+        </div>
+    </div>
+    <div *ngIf="donuttchartData && donuttchartData.length !=0">
+      <app-donut-chart chartId="donutChart" [chartData]="donuttchartData"></app-donut-chart>
+    </div>
+    </div>
+</div>
+<div class="row columnChart">
+    <p class="covid">Covid Cases by State</p>
+    <p class="myDates">Date:</p>
+    <p id="date"></p>
+    <div *ngIf="barrchartData && barrchartData.length != 0">
+    <app-bar-chart chartId="hire-detractors" [chartData]="barrchartData"></app-bar-chart>
+    </div>
+</div>

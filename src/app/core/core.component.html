@@ -1,0 +1,22 @@
+<input type="checkbox" id="check">
+<label for="check">
+  <i class="fas fa-bars" id="btn"></i>
+  <i class="fas fa-times" id="cancel"></i>
+</label>
+<div class="sidebar">
+<header>Buddhi Med</header>
+<h4 class="mainmenu">MAIN MENU</h4>
+<ul>
+<li class="menu-item">
+  <a routerLink="/dashboard"><i class="fas fa-qrcode"></i>Dashboard</a>
+  <a routerLink="/table"><i class="fas fa-table"></i>Table</a>
+  <a routerLink="/covidMap"><i class="fas fa-map"></i>Covid Map</a>
+  
+</li>
+</ul>
+</div>
+
+<section>
+<router-outlet>
+</router-outlet>    
+</section>

@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 480px;
+  margin-top: 14px;
+}
+
+.mat-paginator-range-actions {
+  display: flex;
+  align-items: center;
+  margin-right: 254px;
+}
+tr.mat-row, tr.mat-footer-row {
+  height: 44px;
+}
+/* bar chart  */
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.bar {
+  fill: #87D3F2;
+  margin: 120px;
+}
+
+.axis--x path {
+  opacity: 0;
+}
+
+.axis--y path {
+  opacity: 0;
+}
+
+.axis--x text {
+  color: #747480;
+  font-family: EYInterstate;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.axis--y text {
+  color: #747480;
+  font-family: EYInterstate;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+
+.pie {
+  margin: 20px;
+}
+
+.pie text {
+  font-family: "Verdana";
+  fill: #888;
+}
+
+.pie .name-text{
+  font-size: 1em;
+}
+
+.pie .value-text{
+  font-size: 3em;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

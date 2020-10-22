@@ -1,0 +1,35 @@
+  .covidHead{
+    margin-top: 30px;
+    margin-left: 22px;
+    color: slategray;
+    margin-bottom: 22px;
+  }
+  .filters{
+      margin-left: 22px;
+      color: blue;
+     font-weight: 800;
+  }
+  table {
+    width: 91%;
+    margin-left: 7px;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+.filterss{
+    margin-left: 103px;
+    margin-top: -45px;
+    height: 48px;
+    background-color: whitesmoke;
+}
+.mat-form-field-label-wrapper{
+  position: absolute;
+  left: 0;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 2px;
+}

@@ -1,0 +1,68 @@
+.legendIcon {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.legendText{
+  margin-right: 13px;
+  font-size: 14px;
+  color: #2E2E38;
+  font-family: EYInterstate;
+}
+.legendIconn {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 14px;
+  margin-right: 7px;
+}
+.legendBlueBar{
+  background-color:#87D3F2;
+}
+.legendBlackBar{
+  background-color: rgb(70, 130, 180);
+}
+.legendRed{
+    background-color:#F95D54;
+}
+
+.yellow-line{
+  height: 3px;
+    width: 25px;
+    background-color: #ffe600;
+    margin-top: 5px;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 280px;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+.twocols{
+  display: flex;
+  width: 90%;
+}
+.columnChart{
+  background-color: white;
+  height: 257px;
+  margin-left: 8px;
+  margin-top: 5px;
+  box-shadow: 1px 0px grey;
+}
+.covid{
+  font-size: small;
+  margin-left: 12px;
+  margin-top: 15px;
+  color: darkgray;
+  font-weight: 800;
+}
+.myDates{
+  float: left;
+  margin-left: 55em;
+}
